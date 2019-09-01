@@ -39,13 +39,13 @@ export const useStage = (player, resetPlayer) => {
       // Then check if we collided
       if (player.collided) {
         resetPlayer();
+        return sweepRows(newStage);
       }
-
       return newStage;
     };
 
     setStage(prev => updateStage(prev))
   }, [player, resetPlayer]);
 
-  return [stage, setStage];
+  return [stage, setStage, rowsCleared];
 };
