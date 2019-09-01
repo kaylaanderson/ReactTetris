@@ -10,7 +10,7 @@ import Stage from './Stage';
 import Display from './Display';
 import StartButton from './StartButton';
 import { createStage } from '../gameHelpers';
-import { start } from 'repl';
+
 
 const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
@@ -67,7 +67,7 @@ const move = ({ keyCode }) => {
                 <Display text="Level" />
               </div>
             )}
-            <StartButton onClick={startGame} />
+            <StartButton callback={startGame} />
           </aside>
         </StyledTetris>
       </StyledTetrisWrapper>
